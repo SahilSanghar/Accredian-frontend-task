@@ -41,6 +41,7 @@ return (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        cursor: 'pointer',
         boxShadow: activeButton === 'eligibility' ? '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)' : 'none',
         padding: '2px',
         }} onClick={() => handleElig('eligibility')}>
@@ -58,6 +59,7 @@ return (
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: '20px',
+        cursor: 'pointer',
         boxShadow: activeButton === 'how-to-use' ? '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)' : 'none',
         padding: '2px', // Inner alignment padding
         color: activeButton === 'how-to-use' ? '#1A73E8' : 'black',
@@ -77,6 +79,7 @@ return (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        cursor: 'pointer',
         marginTop: '20px',
         padding: '2px', // Inner alignment padding
         boxShadow: activeButton === 'terms-conditions' ? '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)' : 'none',

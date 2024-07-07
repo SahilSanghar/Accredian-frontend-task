@@ -1,5 +1,5 @@
 import { Divider, Grid, List, ListItem, ListItemText, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import SchoolIcon from '@mui/icons-material/School';
@@ -39,57 +39,130 @@ const bonusData = [
 ];
 
 const Benefits = () => {
+    const [activeItem, setActiveItem] = useState('ALL PROGRAMS');
+
+    const handleItemClick = (itemName) => {
+        setActiveItem(itemName);
+    };
+    
 return (
 <Grid container spacing='-50px' marginTop='2px'>
-<Grid xs={4}>
-    <ListItem>
-    <List sx={{ style, width: '90%', paddingTop: '0px', boxShadow: '0px 1px 24.4px 1px rgba(0, 0, 0, 0.16)', borderRadius:'8px' }}>
-        <ListItem sx={{ backgroundColor: '#1A73E8', color: 'white', borderStartEndRadius: '8px', borderTopLeftRadius: '8px' }}>
-            <ListItemText primary="ALL PROGRAMS" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-        <Divider variant='middle' component="li" />
-        <ListItem>
-            <ListItemText primary="PRODUCT MANAGEMENT" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-        <Divider variant="middle" component="li" />
-        <ListItem>
-            <ListItemText primary="STRATEGY & LEADERSHIP" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-        <Divider variant="middle" component="li" />
-        <ListItem>
-            <ListItemText primary="BUSINESS MANAGEMENT" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-        <Divider variant="middle" component="li" />
-        <ListItem>
-            <ListItemText primary="FINTECH" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-        <Divider variant="middle" component="li" />
-        <ListItem>
-            <ListItemText primary="SENIOR MANAGEMENT" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-        <Divider variant="middle" component="li" />
-        <ListItem>
-            <ListItemText primary="DATA SCIENCE" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-        <Divider variant="middle" component="li" />
-        <ListItem>
-            <ListItemText primary="DIGITAL TRANSFORMATION" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-        <Divider variant="middle" component="li" />
-        <ListItem>
-            <ListItemText primary="BUSINESS ANALYTICS" />
-            <ArrowForwardIosIcon />
-        </ListItem>
-    </List>
-    </ListItem>
+<Grid item xs={4}>
+            <ListItem>
+                <List sx={{ width: '90%', paddingTop: '0px', boxShadow: '0px 1px 24.4px 1px rgba(0, 0, 0, 0.16)', borderRadius: '8px', paddingBottom: '0px' }}>
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'ALL PROGRAMS' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'ALL PROGRAMS' ? 'white' : 'black',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => handleItemClick('ALL PROGRAMS')}
+                    >
+                        <ListItemText primary="ALL PROGRAMS" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <Divider variant="middle" component="li" />
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'PRODUCT MANAGEMENT' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'PRODUCT MANAGEMENT' ? 'white' : 'black',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => handleItemClick('PRODUCT MANAGEMENT')}
+                    >
+                        <ListItemText primary="PRODUCT MANAGEMENT" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <Divider variant="middle" component="li" />
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'STRATEGY & LEADERSHIP' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'STRATEGY & LEADERSHIP' ? 'white' : 'black',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => handleItemClick('STRATEGY & LEADERSHIP')}
+                    >
+                        <ListItemText primary="STRATEGY & LEADERSHIP" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <Divider variant="middle" component="li" />
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'BUSINESS MANAGEMENT' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'BUSINESS MANAGEMENT' ? 'white' : 'black',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => handleItemClick('BUSINESS MANAGEMENT')}
+                    >
+                        <ListItemText primary="BUSINESS MANAGEMENT" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <Divider variant="middle" component="li" />
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'FINTECH' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'FINTECH' ? 'white' : 'black',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => handleItemClick('FINTECH')}
+                    >
+                        <ListItemText primary="FINTECH" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <Divider variant="middle" component="li" />
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'SENIOR MANAGEMENT' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'SENIOR MANAGEMENT' ? 'white' : 'black',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => handleItemClick('SENIOR MANAGEMENT')}
+                    >
+                        <ListItemText primary="SENIOR MANAGEMENT" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <Divider variant="middle" component="li" />
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'DATA SCIENCE' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'DATA SCIENCE' ? 'white' : 'black',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => handleItemClick('DATA SCIENCE')}
+                    >
+                        <ListItemText primary="DATA SCIENCE" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <Divider variant="middle" component="li" />
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'DIGITAL TRANSFORMATION' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'DIGITAL TRANSFORMATION' ? 'white' : 'black',
+                            cursor: 'pointer',
+                        }}
+                        onClick={() => handleItemClick('DIGITAL TRANSFORMATION')}
+                    >
+                        <ListItemText primary="DIGITAL TRANSFORMATION" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                    <Divider variant="middle" component="li" />
+                    <ListItem
+                        sx={{
+                            backgroundColor: activeItem === 'BUSINESS ANALYTICS' ? '#1A73E8' : 'transparent',
+                            color: activeItem === 'BUSINESS ANALYTICS' ? 'white' : 'black',
+                            cursor: 'pointer',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
+                        }}
+                        onClick={() => handleItemClick('BUSINESS ANALYTICS')}
+                    >
+                        <ListItemText primary="BUSINESS ANALYTICS" />
+                        <ArrowForwardIosIcon />
+                    </ListItem>
+                </List>
+            </ListItem>
 </Grid>
 
 <Grid xs={8}>
