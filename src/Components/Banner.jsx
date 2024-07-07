@@ -1,6 +1,7 @@
 import { Box, Grid, Stack, Typography } from '@mui/material'
 import { Button } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import BannerImg from '../assets/banner.png'
 import Money1 from '../assets/belowMoney.png'
@@ -10,6 +11,12 @@ import Money4 from '../assets/moneyBgRight.png'
 import Money5 from '../assets/moneyBgTop.png'
 
 const Banner = () => {
+    const navigate = useNavigate(); // Initialize navigate
+
+    const handleReferNow = () => {
+        navigate('/refer'); // Navigate to '/refer' route on button click
+    };
+
 return (
     <Box>
         <Stack direction="row" marginInline='500px' borderRadius='40px' paddingY='10px' sx={{ backgroundColor: '#EEF5FF' }}>
@@ -38,7 +45,7 @@ return (
                                 Rs. 15,000
                             </Typography>
                 </Typography>
-                <Button sx={{ width: '110px', backgroundColor: '#1A73E8' , color: 'white', marginTop: '30px' , textTransform: 'none', marginBottom: "3px", '&:hover': { backgroundColor: '#1A73E8 !important' }}}>
+                <Button sx={{ width: '110px', backgroundColor: '#1A73E8' , color: 'white', marginTop: '30px' , textTransform: 'none', marginBottom: "3px", '&:hover': { backgroundColor: '#1A73E8 !important' }}} onClick={handleReferNow}>
                     Refer Now
                 </Button>
             </Grid>

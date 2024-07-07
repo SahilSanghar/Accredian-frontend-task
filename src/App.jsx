@@ -1,20 +1,21 @@
-import React from 'react'
-import Hero from './View/Hero'
-import Process from './View/Process'
-import Benifits from './View/Benifits'
-import FAQs from './View/FAQs'
-import Footer from './View/Footer'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './Components/Login';
+import Register  from './Components/Register';
+import Home from './Home';
+import Refer from './Components/Refer';
 
 const App = () => {
   return (
-    <>
-      <Hero />
-      <Process />
-      <Benifits />
-      <FAQs />
-      <Footer />
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/refer" element={<Refer />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;
