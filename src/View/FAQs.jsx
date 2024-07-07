@@ -5,7 +5,7 @@ import Support from '../Components/Support'
 
 const FAQs = () => {
 return (
-    <Box marginY='150px'>
+    <Box id='FAQ' marginY='150px'>
         <Typography variant='h4' textAlign='center'>
             Frequently Asked&nbsp;
             <Typography variant='span' color='#1A73E8'>

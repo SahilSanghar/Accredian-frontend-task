@@ -1,8 +1,9 @@
 import { Button, Grid, Paper, Popover, Stack, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 
 const FAQ = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [activeButton, setActiveButton] = useState('eligibility');
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -10,6 +11,18 @@ const FAQ = () => {
 
     const handleClose = () => {
         setAnchorEl(null);
+    };
+
+    const handleElig = (buttonName) => {
+        setActiveButton(buttonName);
+    };
+
+    const handleHowToUse = (buttonName) => {
+        setActiveButton(buttonName);
+    };
+
+    const handleTermAndCond = (buttonName) => {
+        setActiveButton(buttonName);
     };
 
     const open = Boolean(anchorEl);
@@ -23,14 +36,14 @@ return (
         width: '259px',
         height: '68px',
         borderRadius: '7px',
-        color: '#1A73E8',
+        color: activeButton === 'eligibility' ? '#1A73E8' : 'black',
         border: '2px solid #E2E8F0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        boxShadow: '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)',
-        padding: '2px', // Inner alignment padding
-        }}>
+        boxShadow: activeButton === 'eligibility' ? '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)' : 'none',
+        padding: '2px',
+        }} onClick={() => handleElig('eligibility')}>
             <Typography variant='h6'>
                 Eligibility
             </Typography>
@@ -40,14 +53,17 @@ return (
         width: '259px',
         height: '68px',
         borderRadius: '7px',
-        border: '2px solid #737373',
+        border: '2px solid #E2E8F0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: '20px',
-        // boxShadow: '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)',
+        boxShadow: activeButton === 'how-to-use' ? '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)' : 'none',
         padding: '2px', // Inner alignment padding
-        }}>
+        color: activeButton === 'how-to-use' ? '#1A73E8' : 'black',
+        }}
+        onClick={() => handleHowToUse('how-to-use')}
+        >
             <Typography variant='h6'>
                 How To Use?
             </Typography>
@@ -57,14 +73,15 @@ return (
         width: '259px',
         height: '68px',
         borderRadius: '7px',
-        border: '2px solid #737373',
+        border: '2px solid #E2E8F0',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: '20px',
-        // boxShadow: '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)',
         padding: '2px', // Inner alignment padding
-        }}>
+        boxShadow: activeButton === 'terms-conditions' ? '0px 2px 26.6px 0px rgba(0, 0, 0, 0.18)' : 'none',
+        color: activeButton === 'terms-conditions' ? '#1A73E8' : 'black',
+        }} onClick={() => handleTermAndCond('terms-conditions')}>
             <Typography variant='h6'>
                 Terms & Conditions
             </Typography>

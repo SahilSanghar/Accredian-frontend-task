@@ -6,7 +6,7 @@ import Copyright from '../Components/Copyright'
 
 const Footer = () => {
 return (
-    <Box height='800px' sx={{ backgroundColor: '#282828', color: 'white'}}>
+    <Box id='support' height='800px' sx={{ backgroundColor: '#282828', color: 'white'}}>
         <FooterHead />
         <Divider variant="middle" sx={{ borderColor: 'white', width: '1100px', marginX: '200px' }}  />
         <Details />
